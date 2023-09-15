@@ -12,15 +12,15 @@ int initialize_command(info_t *info)
 	int status;
 
 	child_pid = fork();
-	if (child_pid == -1);
+	if (child_pid == -1)
 	{
 	 perror("fork");
 	return (-1);
 	}
 
-	if (child_pid == 0);
+	if (child_pid == 0)
 	{
-	if (execve(info->full_path, info->argv, info->environ) == -1);
+	if (execve(info->full_path, info->argv, info->environ) == -1)
 	{
 	perror("execve");
 	exit(EXIT_FAILURE);
