@@ -84,5 +84,9 @@ void joemac_print(char *string, int descriptor);
 void visualize_prompt(void);
 int initialize_command(info_t *info);
 void read_command_input(char *format, size_t size);
+/* environ_env.c */
+char **jm_env(info_t *);
+int joemac_unsetenv(info_t *, char *);
+int joemac_setenv(info_t *, char *, char *);
 
 #endif /*SHELL_H*/

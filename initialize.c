@@ -10,6 +10,12 @@ int initialize_command(info_t *info)
 {
 	pid_t child_pid;
 	int status;
+	
+	if (access(info->full_path, X_OK) == -1)
+	{
+		perror("Error accessing command path");
+		return -1;
+	}
 
 	child_pid = fork();
 	if (child_pid == -1)
