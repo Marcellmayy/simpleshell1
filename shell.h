@@ -83,5 +83,6 @@ typedef struct passinfo
 void joemac_print(char *string, int descriptor);
 void visualize_prompt(void);
 int initialize_command(info_t *info);
+void read_command_input(char *format, size_t size);
 
 #endif /*SHELL_H*/
