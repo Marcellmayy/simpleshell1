@@ -77,6 +77,8 @@ typedef struct passinfo
 	char **cmd_buff;
 	int cmd_buff_type;
 	int readfd;
+	char *token;
+	static char *part;
 } info_t
 
 /************FUNTIONS************/
@@ -84,6 +86,8 @@ void joemac_print(char *string, int descriptor);
 void visualize_prompt(void);
 int initialize_command(info_t *info);
 void read_command_input(char *format, size_t size);
+char joemac_command_split(char *str, const char *delim);
+int main(int argc, char *argv[]); 
 /* environ_env.c */
 char **jm_env(info_t *);
 int joemac_unsetenv(info_t *, char *);

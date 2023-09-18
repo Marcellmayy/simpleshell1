@@ -13,14 +13,14 @@ int initialize_command(info_t *info)
 	
 	if (access(info->full_path, X_OK) == -1)
 	{
-		perror("Error accessing command path");
-		return -1;
+	perror("Error accessing command path");
+	return -1;
 	}
 
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-	 perror("fork");
+	perror("fork");
 	return (-1);
 	}
 
