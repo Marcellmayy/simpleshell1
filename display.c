@@ -5,7 +5,7 @@
  * return: 0 if success
  */
 
-void visualize_prompt(void) 
+void visualize_prompt(void)
 {
 	joemac_print("joemac_shell$$");
 }

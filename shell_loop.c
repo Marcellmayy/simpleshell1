@@ -1,18 +1,18 @@
-#include "shell.h"
+	#include "shell.h"
 
-/**
- * shell_loop - This show a simple loop through all the already written function
- * @read: print out the shell ptompt
- * @split: the is space between your command and your arguement
- * @fork: execute child process
- * @return: always 0
- */
+	/**
+	* shell_loop - to show a simple loop through all the already written function
+	* @read: print out the shell ptompt
+	* @split: the is space between your command and your arguement
+	* @fork: execute child process
+	* @return: always 0
+	*/
 
-int main(int argc, char *argv[]) 
-{
+	int main(int argc, char *argv[])
+	{
 
-	while (1) 
-{
+	while (1)
+	{
 
 	joemac_print("joemac_shell$$");
 
@@ -20,19 +20,21 @@ int main(int argc, char *argv[])
 	ssize_t len = 0;
 	Read(STDIN_FILENO, message, size);
 
+
 	char *command = joemac_command_split(line, ";\\n");
-	if (command != NULL) 
+	if (command != NULL)
 	{
 	*command = '\0';
 	}
 
+
 	pid_t pid = fork();
-	if (pid == 0) 
+	if (pid == 0)
 	{
-	execve(info-> full_path, info->argv, info->environ);
+	execve(info->full_path, info->argv, info->environ);
 	exit(1);
-	} 
-	else 
+	}
+	else
 	{
 	wait(NULL);
 	}
@@ -40,5 +42,5 @@ int main(int argc, char *argv[])
 	free(line);
 	}
 
-	return 0;
-}
+	return (0);
+	}
