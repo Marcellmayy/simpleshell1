@@ -67,12 +67,12 @@ int joemac_setenv(info_t *info, char *var, char *val)
 	if (!var || !val)
 		return (0);
 
-	buf = malloc(_strlen(var) + _strlen(val) + 2);
+	buf = malloc(strlen(var) + strlen(val) + 2);
 	if (!buf)
 		return (1);
-	_strcpy(buf, var);
-	_strcat(buf, "=");
-	_strcat(buf, val);
+	strcpy(buf, var);
+	strcat(buf, "=");
+	strcat(buf, val);
 	node = info->env;
 	while (node)
 	{

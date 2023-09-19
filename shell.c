@@ -1,9 +1,8 @@
 #include "shell.h"
 /**
  *jomc_ main - entry point
- * Return: 0
+ * 
  */
-
 int jomc_main(void)
 {
 	char formt[128];
@@ -11,7 +10,7 @@ int jomc_main(void)
 	while (1)
 	{
 		visualize_prompt();
-		read_input(formt, sizeof(formt));
+		read_command_input(sizeof(formt));
 		initialise(formt);
 	}
 

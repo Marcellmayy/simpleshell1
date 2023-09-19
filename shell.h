@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stddef.h>
 #include <signal.h>
 #include <limits.h>
 #include <sys/types.h>
@@ -19,6 +20,7 @@
 #define MAX_ARG_COUNT 128
 #define MAX_ALIASES 1024
 #define READ_BUF_SIZE 1024
+#define BUFSIZE 1024
 
 /* if using system getline() */
 #define USE_GETLINE 
@@ -78,19 +80,25 @@ typedef struct passinfo
 	int cmd_buff_type;
 	int readfd;
 	char *token;
-	static char *part;
-} info_t
+	char *part;
+
+	char *full_path;
+} info_t;
 
 /************FUNTIONS************/
 void joemac_print(char *string, int descriptor);
 void visualize_prompt(void);
 int initialize_command(info_t *info);
-void read_command_input(char *format, size_t size);
+void read_command_input(size_t size);
 char joemac_command_split(char *str, const char *delim);
-int main(int argc, char *argv[]); 
+int main(int argc, char *argv[]);
+void initialise(char *format);
 /* environ_env.c */
 char **jm_env(info_t *);
 int joemac_unsetenv(info_t *, char *);
 int joemac_setenv(info_t *, char *, char *);
-
+char **list_to_strings(list_t *list);
+char *starts_with(const char *str, const char *prefix);
+int delete_node_at_index(list_t **head, unsigned int index);
+int add_node_end(list_t **head, char *str, int num);
 #endif /*SHELL_H*/

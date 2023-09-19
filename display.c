@@ -7,5 +7,5 @@
 
 void visualize_prompt(void)
 {
-	joemac_print("joemac_shell$$");
+	joemac_print("joemac_shell$$", 1);
 }
