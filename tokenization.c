@@ -14,22 +14,18 @@ char joemac_command_split(char *str, const char *delim)
 
 	if (str != null)
 	{
-	*part = str;
+	part = str;
 	}
 
 	token = part;
 
-	while (part != null && *part != "")
+	while (part != NULL && *part != '\0')
 	{
-	if (part.Contains(delim))
+	if (strchr(delim *part)!= NULL)
 	{
-	*part = "";
+	*part = '\0';
 	part++;
 	return (token);
 	}
-
-	part++;
 	}
-
-	return (null);
 }
