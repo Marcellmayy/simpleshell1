@@ -26,7 +26,7 @@ int initialize_command(info_t *info)
 
 	if (child_pid == 0)
 	{
-	if (execve(info->full_path, info->argv, info->environ) == -1)
+	if (execve(argv[0], argv, environ);
 	{
 	perror("execve");
 	exit(EXIT_FAILURE);

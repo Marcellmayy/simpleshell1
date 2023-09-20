@@ -5,8 +5,8 @@
 	* @format: string input
 	* return: 0
 	*/
-	void joemac_print(char *string, int descriptor)
+	void joemac_print(char *string int descriptor)
 	{
-	write(1, &format, strlen(format));
+	write(descriptor, string, strlen(string));
 	}
 
