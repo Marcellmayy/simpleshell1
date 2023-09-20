@@ -7,25 +7,20 @@
  *  Return: always 0
  */
 
+
 char joemac_command_split(char *str, const char *delim)
 {
-	char *token
-	static char *part;
-
-	if (str != null)
-	{
-	part = str;
-	}
-
-	token = part;
+	char *part = str;
 
 	while (part != NULL && *part != '\0')
 	{
-	if (strchr(delim *part)!= NULL)
+	if (strchr(part, *delim) != NULL)
 	{
 	*part = '\0';
 	part++;
-	return (token);
+	return (*str);
 	}
+	part++;
 	}
+	return '\0';
 }
